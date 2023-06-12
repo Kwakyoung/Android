@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         // 3. 인터페이스를 상속받는 방법
-        // -> Spring MVC의 경우에는 DAO또는 Service가 반드시 구현해야만 하는 메소드의 형태를 만들어서 설계도 개념으로 사용. ( 많은 개발자가 협업시 편리한 방법)
+        // -> Spring MVC의 경우에는 DAO또는 Service가 반드시 구현해야만 하는 메소드의 형태를 만들어서 설계도 개념으로 사용. ( 많은 개발자가 협업시 편리한 방법 )
         // -> Android <- 다향성을 이용한 방법 : View.OnClickLister <= onClick이라는 메소드를 반드시 가지고 있음.
 
         // 4. 자바의 인터페이스 단점을 보완 => lamda (람다식, 함수형으로 new나 불필요한 코드를 생략하고 사용하는 방법)
