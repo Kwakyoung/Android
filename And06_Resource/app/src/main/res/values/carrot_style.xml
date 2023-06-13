@@ -1,8 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="carrot_style">
 
+
+    <color name="carrot_line_color">#EFEFEF</color>
+    <style name="carrot_line_10dp">
+        <item name="android:layout_marginLeft" >10dp</item>
+        <item name="android:layout_marginRight" >10dp</item>
+        <item name="android:layout_width" >match_parent</item>
+        <item name="android:layout_height" >10dp</item>
+        <item name="android:background" >@color/carrot_line_color</item>
 
     </style>
 
+    <style name="carrot_mainmenu_tv">
+
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+
+    </style>
+
+    <color name="carrot_submenu_tv_textcolor">#3E3E3E</color>
+    <style name="carrot_submenu_tv" parent="carrot_mainmenu_tv">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/carrot_submenu_tv_textcolor</item>
+    </style>
 </resources>

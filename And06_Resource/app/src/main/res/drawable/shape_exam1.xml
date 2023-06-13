@@ -4,10 +4,9 @@
     >
 
     <gradient
-        android:startColor="#1F4B77"
-        android:centerColor="#4C64AC"
-        android:endColor="#3578C3"
-
+        android:startColor="#0B1118"
+        android:centerColor="#34475A"
+        android:endColor="@color/app_main_color"
         />
 
 

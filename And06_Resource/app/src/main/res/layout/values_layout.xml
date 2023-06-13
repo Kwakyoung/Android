@@ -7,7 +7,7 @@
     >
     <TextView
         android:background="@color/app_main_color"
-        android:text="@string/kyg_version"
+        android:text="@string/kym_version"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
@@ -15,30 +15,27 @@
         android:background="@color/app_main_color"
         android:text="디먼1"
         android:layout_width="@dimen/tv_values_ln_width"
-        android:layout_height="@dimen/tv_values_ln_height"/>
+        android:layout_height="@dimen/tv_values_ln_hegiht"/>
     <TextView
         android:background="@color/app_main_color"
-        android:text="@string/app_name"
+        android:text="디먼2"
         android:layout_width="@dimen/tv_values_ln_width"
-        android:layout_height="@dimen/tv_values_ln_height"/>
+        android:layout_height="@dimen/tv_values_ln_hegiht"/>
+
     <TextView
         style="@style/values_ln_tv_style"
         android:text="스타일"
         />
-
     <TextView
         style="@style/values_ln_tv_style2"
         android:text="스타일"
         />
-
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#123"/>
-
+        android:background="#9A9A9A"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="모양"/>
-
 </LinearLayout>

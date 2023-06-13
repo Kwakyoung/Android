@@ -10,10 +10,14 @@
         android:background="@drawable/shape_exam1"
         android:layout_width="match_parent"
         android:layout_height="100dp"/>
+
+
     <View
-        android:background="@drawable/shape_exm2"
+        android:background="@drawable/shape_exam2"
         android:layout_width="match_parent"
-        android:layout_height="100dp"/>
+        android:layout_height="200dp"/>
+
+
     <Button
         android:background="@drawable/selector_exam1"
         android:layout_width="100dp"
@@ -22,6 +26,6 @@
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/ic_rabbit"/>
+        android:src="@drawable/ic_pen"/>
 
 </LinearLayout>
