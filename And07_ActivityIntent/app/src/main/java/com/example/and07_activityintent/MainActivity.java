@@ -114,11 +114,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         } else if (v.getId() == R.id.btn_3) {
             Intent intent = new Intent(this, TestActivity.class);
-            intent.putExtra("pluskey",edt_string.getText().toString() + Integer.parseInt(edt_int.getText().toString()));
+            TestDTO dto = new TestDTO(edt_string.getText().toString(), Integer.parseInt(edt_int.getText().toString()));
+            intent.putExtra("pluskey", dto);
             startActivity(intent);
 
         } else if (v.getId() == R.id.btn_array) {
             Intent intent = new Intent(this, TestActivity.class);
+            ArrayList<TestDTO> list = new ArrayList<>();
             intent.putExtra("list",intent.getSerializableExtra("list"));
             startActivity(intent);
         }

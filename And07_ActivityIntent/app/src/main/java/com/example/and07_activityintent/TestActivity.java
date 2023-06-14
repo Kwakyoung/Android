@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.util.ArrayList;
+
 public class TestActivity extends AppCompatActivity {
 
     @Override
@@ -14,14 +16,14 @@ public class TestActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test);
         Intent intent = getIntent();
 
-        String strValue1 = intent.getStringExtra("stringkey");
-        String strValue2 = intent.getStringExtra("intkey");
-        String strValue3 = intent.getStringExtra("pluskey");
-        String strValue4 = intent.getStringExtra("list");
-        Log.d("오", "onCreate: "+strValue1);
-        Log.d("오", "onCreate: "+strValue2);
-        Log.d("오", "onCreate: "+strValue3);
-        Log.d("오", "onCreate: "+strValue4);
+        String strValue = intent.getStringExtra("stringkey");
+        int intValue = intent.getIntExtra("intkey", 1);
+        TestDTO dto = (TestDTO) intent.getSerializableExtra("pluskey");
+        ArrayList<TestDTO> list = (ArrayList<TestDTO>) intent.getSerializableExtra("list");
+        Log.d("오", "onCreate1: "+strValue);
+        Log.d("오", "onCreate2: "+intValue);
+        Log.d("오", "onCreate3: "+dto.getMax()+dto.getMax());
+        Log.d("오", "onCreate4: "+list);
     }
 }
 
