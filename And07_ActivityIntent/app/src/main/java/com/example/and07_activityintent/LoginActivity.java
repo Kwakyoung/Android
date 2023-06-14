@@ -10,6 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 public class LoginActivity extends AppCompatActivity {
 
     @Override
@@ -41,6 +45,26 @@ public class LoginActivity extends AppCompatActivity {
 
                if (id.getText().toString().equals("admin") && pw.getText().toString().equals("admin1234")) {
                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                   intent.putExtra("strkey",id.getText().toString()+"intent");
+                   // intKey 숫자를 다음 액티비티로 전송해보기
+                   intent.putExtra("intkey",1);
+
+                   LoginDTO dto = new LoginDTO(id.getText().toString() + "1" , pw.getText().toString() + "1");
+                   intent.putExtra("dtokey", dto);
+
+
+                // LoginDTO를 5개 아무데이터나 넣고 묶은 ArrayList만들어보기.
+                   ArrayList<LoginDTO> list = new ArrayList<>(); // 초기화 식 loginDTO 타입을 묶어놓을 공간마련.
+                   list.add(new LoginDTO("a1","b1"));
+                   list.add(new LoginDTO("a2","b2"));
+                   list.add(new LoginDTO("a3","b3"));
+                   list.add(new LoginDTO("a4","b4"));
+                   list.add(new LoginDTO("a5","b5"));
+                   intent.putExtra("list",list); // startAactivity메소드 실행 전 데이터 담는 처리를 끝낸다
+
+
+
+                   // start 되기 전에 데이터 담기
                    startActivity(intent);
                    Toast.makeText(LoginActivity.this, "로그인 성공", Toast.LENGTH_SHORT).show();
                }else {
@@ -50,4 +74,26 @@ public class LoginActivity extends AppCompatActivity {
        });
 
     }
+
+
+
+    public class KygClass implements Serializable {
+
+    }
+
+    public class KygClass2 implements Serializable{
+
+    }
+
+    public void method(Serializable k) {
+        // 역직렬화 : KygClass k2 = (KygClass) k;
+    }
+
+
+
+
+
+
+
+
 }
