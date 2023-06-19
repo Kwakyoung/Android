@@ -19,11 +19,11 @@ public class TestActivity extends AppCompatActivity {
         String strValue = intent.getStringExtra("stringkey");
         int intValue = intent.getIntExtra("intkey", 1);
         TestDTO dto = (TestDTO) intent.getSerializableExtra("pluskey");
-        ArrayList<TestDTO> list = (ArrayList<TestDTO>) intent.getSerializableExtra("list");
+        ArrayList<TestDTO> list = (ArrayList<TestDTO>) intent.getSerializableExtra("arraylist");
         Log.d("오", "onCreate1: "+strValue);
         Log.d("오", "onCreate2: "+intValue);
-        Log.d("오", "onCreate3: "+dto.getMax()+dto.getMax());
-        Log.d("오", "onCreate4: "+list);
+        Log.d("오", "onCreate3: "+dto.getName()+dto.getMax());
+        Log.d("오", "onCreate4: "+list.size());
     }
 }
 

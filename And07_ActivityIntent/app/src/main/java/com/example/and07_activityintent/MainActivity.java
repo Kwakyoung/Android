@@ -90,6 +90,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     @Override
     public void onClick(View v) {
+
         if(v.getId() == R.id.btn_search){
             Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
             intent.putExtra(SearchManager.QUERY, edt_search.getText().toString());
@@ -120,8 +121,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         } else if (v.getId() == R.id.btn_array) {
             Intent intent = new Intent(this, TestActivity.class);
-            ArrayList<TestDTO> list = new ArrayList<>();
-            intent.putExtra("list",intent.getSerializableExtra("list"));
+            ArrayList<TestDTO> arrayList = new ArrayList<>();
+            arrayList.add(new TestDTO("a",1));
+            intent.putExtra("arraylist",arrayList);
             startActivity(intent);
         }
 
