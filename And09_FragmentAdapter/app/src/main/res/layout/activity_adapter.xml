@@ -24,6 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <Button
+            android:padding="0.1dp"
             android:id="@+id/btn_recy"
             android:text="리사이클러뷰"
             android:layout_width="wrap_content"

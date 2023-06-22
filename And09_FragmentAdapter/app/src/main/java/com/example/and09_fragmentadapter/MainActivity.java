@@ -6,11 +6,10 @@ import androidx.fragment.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.TextView;
+
+import com.example.and09_fragmentadapter.melon.MelonFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
 
             //manager.beginTransaction().remove()
         });
+
+
 
 
         btn_adapter.setOnClickListener(v -> {

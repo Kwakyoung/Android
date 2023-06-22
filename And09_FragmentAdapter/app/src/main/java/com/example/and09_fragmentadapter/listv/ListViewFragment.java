@@ -29,6 +29,11 @@ public class ListViewFragment extends Fragment {
         list.add(new ListDTO(R.drawable.ogu3, "캐릭터13", "ㅎㅎ"));
         list.add(new ListDTO(R.drawable.ogu4, "캐릭터14", "ㅂㅂ"));
         list.add(new ListDTO(R.drawable.ogu5, "캐릭터15", "ㅅㅅ"));
+        list.add(new ListDTO(R.drawable.ogu1, "캐릭터17", "ㅎㅇ"));
+        list.add(new ListDTO(R.drawable.ogu2, "캐릭터128", "ㅋㅋ"));
+        list.add(new ListDTO(R.drawable.ogu3, "캐릭터139", "ㅎㅎ"));
+        list.add(new ListDTO(R.drawable.ogu4, "캐릭터140", "ㅂㅂ"));
+        list.add(new ListDTO(R.drawable.ogu5, "캐릭터154", "ㅅㅅ"));
 
 
         listv = v.findViewById(R.id.listv);

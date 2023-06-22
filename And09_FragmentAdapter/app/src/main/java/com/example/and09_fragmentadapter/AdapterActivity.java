@@ -7,11 +7,15 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.example.and09_fragmentadapter.grid.GridFragment;
 import com.example.and09_fragmentadapter.listv.ListViewFragment;
+import com.example.and09_fragmentadapter.melon.MelonFragment;
+import com.example.and09_fragmentadapter.recycler.NormalClass;
+import com.example.and09_fragmentadapter.recycler.RecyclerFragment;
 
 public class AdapterActivity extends AppCompatActivity {
     // ListView listv;
-    Button btn_list;
+    Button btn_list, btn_grid, btn_pratice;
     LinearLayout container_ln;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +24,9 @@ public class AdapterActivity extends AppCompatActivity {
 
 
         btn_list = findViewById(R.id.btn_list);
+        btn_grid = findViewById(R.id.btn_grid);
+        btn_pratice = findViewById(R.id.btn_pratice);
+
 
         FragmentManager manager = getSupportFragmentManager();
 
@@ -27,7 +34,19 @@ public class AdapterActivity extends AppCompatActivity {
             manager.beginTransaction().replace(R.id.container_ln, new ListViewFragment()).commit();
         });
 
+        btn_grid.setOnClickListener(v -> {
+            manager.beginTransaction().replace(R.id.container_ln, new GridFragment()).commit();
+        });
 
+        findViewById(R.id.btn_recy).setOnClickListener(v -> {
+            manager.beginTransaction().replace(R.id.container_ln, new RecyclerFragment()).commit();
+        });
+
+        btn_pratice.setOnClickListener(v -> {
+            manager.beginTransaction().replace(R.id.container_ln, new MelonFragment()).commit();
+        });
+
+        new NormalClass().testToast(this,"나는 액티비티");
 
 
 
