@@ -41,16 +41,22 @@ public class MelonFragment extends Fragment {
                      R.drawable.chart_img2,
                      R.drawable.chart_img3,
                      R.drawable.chart_img4,
+                     R.drawable.chart_img4,
+                     R.drawable.chart_img2,
                      R.drawable.chart_img5,
                      R.drawable.chart_img6,
                      R.drawable.chart_img7};
 
-        String name[] = {"(여자)아이들","IVE(아이브)","aespa","LE SSERAFIM(르세라핌)","IVE(아이브)","임영웅","누구세요"};
 
+        String name[] = {"(여자)아이들","IVE(아이브)","aespa","LE SSERAFIM(르세라핌)","LE SSERAFIM(르세라핌)","IVE(아이브)","임영웅","임영웅","누구세요"};
+        String title[] = {"퀸카 (Queencard)", "I AM", "Spicy", "이브, 프시케 그리고 푸른수", "UNFORGIVEN", "Kitsch", "사랑은 늘 도망가","모래 알갱이", "누구세요"};
 
         for (int i = 0; i < img.length; i++) {
+            if(img[i] == R.drawable.chart_img1){
+                name[i]="ㅋㅋ";
+            }
 
-            list.add(new MelonDTO(img[i], " 흐음 ", name[i],i+1+""));
+            list.add(new MelonDTO(img[i], title[i], name[i],i+1+""));
 
 
         }
