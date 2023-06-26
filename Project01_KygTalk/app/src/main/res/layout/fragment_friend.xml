@@ -25,6 +25,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:layout_marginVertical="10dp"
             android:scaleType="centerCrop"
             android:src="@drawable/img2"
             android:layout_width="60dp"
@@ -49,6 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"/>
         <TextView
+            android:textSize="20dp"
             android:layout_marginVertical="3dp"
             android:layout_below="@+id/bord"
             android:text="내 멀티프로필"
@@ -72,6 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"/>
         <TextView
+            android:textSize="20dp"
             android:layout_marginVertical="3dp"
             android:layout_below="@+id/bord1"
             android:text="생일인 친구"
@@ -95,6 +98,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"/>
         <TextView
+            android:textSize="20dp"
             android:layout_marginVertical="3dp"
             android:layout_below="@+id/bord2"
             android:text="업데이트한 친구"
@@ -119,6 +123,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"/>
         <TextView
+            android:textSize="20dp"
             android:layout_marginVertical="3dp"
             android:layout_below="@+id/bord3"
             android:text="추천 친구"
@@ -143,6 +148,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"/>
         <TextView
+            android:textSize="20dp"
             android:id="@+id/tv_friend_cnt"
             android:layout_marginVertical="3dp"
             android:layout_below="@+id/bord6"
@@ -161,7 +167,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recv_friend"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"/>
 
     </LinearLayout>
 

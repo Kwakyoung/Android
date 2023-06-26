@@ -12,6 +12,7 @@
 
         <!-- 액션바 사이즈 -->
         <item name="actionBarSize">50dp</item>
+
         <item name="fontFamily">@font/font_main</item>
 
     </style>
