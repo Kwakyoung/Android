@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
+import com.example.cloneyoutubemusic.Home.HomeFragment;
 import com.example.cloneyoutubemusic.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,6 +31,16 @@ public class MainActivity extends AppCompatActivity {
 
             } else if (item.getItemId()==R.id.tab2) {
 
+            } else if (item.getItemId()==R.id.tab3) {
+
+            }else{
+                return false;
+            }
+
+            if (fragment == null) {
+                Toast.makeText(this, "아직 준비되지 않았습니다.", Toast.LENGTH_SHORT).show();
+            }else {
+                manager.beginTransaction().replace(R.id.container,fragment).commit();
             }
             return true;
         });

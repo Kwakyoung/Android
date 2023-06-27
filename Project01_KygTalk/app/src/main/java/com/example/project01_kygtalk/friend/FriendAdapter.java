@@ -18,7 +18,8 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.ViewHolder
 
     ItemFirendRecvBinding binding;
     ArrayList<FriendDTO> list ;
-    Context context;
+    Context context;  // 액티비티로 이동하기 위해선 컨텍스트
+
 
     public FriendAdapter(ArrayList<FriendDTO> list, Context context) {
         this.list = list;

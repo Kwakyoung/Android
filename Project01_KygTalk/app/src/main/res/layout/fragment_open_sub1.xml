@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".opentalk.OpenSub1Fragment"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:layout_marginHorizontal="10dp"
+        android:textSize="30dp"
+        android:text="오픈채팅Lite - 지금 대화 중!"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:src="@drawable/bannerimg"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+            <TextView
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:text="절약방"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </FrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recv_live_poorchat"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"/>
+
+        <View
+            android:layout_marginVertical="10dp"
+            android:background="#666"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"/>
+
+        <TextView
+            android:textSize="30dp"
+            android:gravity="center"
+            android:text="오픈채팅 Lite 참여하기"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+        <View
+            android:layout_marginVertical="10dp"
+            android:background="#E4E4E4"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginHorizontal="10dp"
+                android:textSize="30dp"
+                android:text="오픈채팅 오리지널 : 거지방"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recv_img1"
+                android:layout_marginHorizontal="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <View
+            android:layout_marginVertical="10dp"
+            android:background="#E4E4E4"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginHorizontal="10dp"
+                android:textSize="30dp"
+                android:text="워커홀릭의 두번째 일"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recv_work_holic"
+                android:layout_marginHorizontal="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="10dp"
+            android:background="#E4E4E4"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+
+        <ImageView
+            android:scaleType="centerCrop"
+            android:src="@drawable/bannerimg"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+
+        <View
+            android:layout_marginBottom="10dp"
+            android:background="#E4E4E4"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginHorizontal="10dp"
+                android:textSize="30dp"
+                android:text="이런 주제 어때요?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="10dp">
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="희망적금"
+                    />
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="앱테크"
+                    />
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="절약방"
+                    />
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="재테크"
+                    />
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="갓생"
+                    />
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="내집마련"
+                    />
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="짠테크"
+                    />
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="거지방"
+                    />
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="무지출"
+                    />
+            </com.google.android.material.chip.ChipGroup>
+        </LinearLayout>
+
+        <View
+            android:layout_marginVertical="10dp"
+            android:background="#E4E4E4"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
