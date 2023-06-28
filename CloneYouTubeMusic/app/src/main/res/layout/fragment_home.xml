@@ -6,15 +6,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Home.HomeFragment"
     android:background="#000"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
-    <RelativeLayout
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <ImageView
+            android:alpha="0.2"
+            android:scaleType="centerCrop"
+            android:src="@drawable/backimg1"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/imgv_logo"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="15dp"
+
             android:src="@drawable/img_logo"
             android:layout_width="30dp"
             android:layout_height="30dp"/>
@@ -61,13 +79,52 @@
 
         </androidx.cardview.widget.CardView>
 
-
     </RelativeLayout>
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+        <com.google.android.material.chip.ChipGroup
+            android:layout_marginHorizontal="10dp"
+        android:id="@+id/chip_grp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.chip.Chip
+            android:text="휴식"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:chipBackgroundColor="#808080"
+            />
+
+            <com.google.android.material.chip.Chip
+
+                android:text="운동"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipBackgroundColor="#808080"
+                />
+        </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
+    </LinearLayout>
+
+    </LinearLayout>
+    </FrameLayout>
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginHorizontal="10dp"
         android:id="@+id/recv_home"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
+
 
 </LinearLayout>

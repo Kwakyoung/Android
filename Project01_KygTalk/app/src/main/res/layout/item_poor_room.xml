@@ -7,18 +7,21 @@
     >
 
     <androidx.cardview.widget.CardView
-        app:cardCornerRadius="15dp"
+        android:layout_marginRight="10dp"
+        app:cardCornerRadius="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
     <ImageView
+        android:scaleType="centerCrop"
         android:id="@+id/imageView"
-        android:alpha="0.8"
+        android:alpha="0.6"
         android:src="@drawable/img2"
         android:layout_width="140dp"
-        android:layout_height="180dp"/>
+        android:layout_height="200dp"/>
 
     <TextView
+        android:textColor="@color/white"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="120dp"
         android:id="@+id/imag_txt"
@@ -27,12 +30,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <TextView
+        android:textColor="@color/white"
         android:layout_marginTop="140dp"
         android:layout_marginLeft="30dp"
         android:textSize="15dp"
         android:text="178명 | 30분전"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
 
     </androidx.cardview.widget.CardView>
 
