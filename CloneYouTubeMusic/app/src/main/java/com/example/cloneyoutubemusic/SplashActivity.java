@@ -23,7 +23,6 @@ public class SplashActivity extends AppCompatActivity {
 
 //        ActionBar actionBar = getSupportActionBar();
 //        actionBar.hide();
-
         // ProgressDialog : 로딩중에 사용자가 어떤 동작을 하고있는지를 인지를 못한 경우에는 프로그램 오류나 , 버그를 의심하고 기다림을 멈춘다. => 조작
         // 조작x => 앱 종료 ( 로딩중이라는것을 나타내기위한 위젯을 사용해보기 )
         ProgressDialog dialog = new ProgressDialog(this);

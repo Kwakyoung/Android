@@ -80,11 +80,12 @@
                 android:text="오픈채팅 오리지널 : 거지방"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recv_img1"
-                android:layout_marginHorizontal="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="10dp" />
         </LinearLayout>
 
         <View

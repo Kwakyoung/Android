@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.cloneyoutubemusic.Home.HomeFragment;
+import com.example.cloneyoutubemusic.Round.RoundFragment;
 import com.example.cloneyoutubemusic.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 fragment = new HomeFragment();
 
             } else if (item.getItemId()==R.id.tab2) {
+                fragment = new RoundFragment();
 
             } else if (item.getItemId()==R.id.tab3) {
 
