@@ -5,7 +5,4 @@ public class KygAdapter {
 
 
 
-    public class ViewHolder extends KygAdapterParent.KygAdapter {
-
-    }
 }

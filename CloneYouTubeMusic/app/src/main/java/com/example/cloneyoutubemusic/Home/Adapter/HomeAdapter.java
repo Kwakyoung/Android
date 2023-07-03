@@ -40,15 +40,18 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.binding.itemMusic.setImageResource(list.get(position).getMusic());
         holder.binding.itemTitle.setText(list.get(position).getTitle());
-        holder.binding.itemMusic1.setImageResource(list.get(position).getMusic1());
-        holder.binding.itemTitle1.setText(list.get(position).getTitle1());
-        holder.binding.relativ1.setOnClickListener(v -> {
+//        holder.binding.itemMusic1.setImageResource(list.get(position).getMusic1());
+//        holder.binding.itemTitle1.setText(list.get(position).getTitle1());
+        holder.binding.homeSinger.setText(list.get(position).getSinger());
+//        holder.binding.homeSinger1.setText(list.get(position).getSinger1());
+        holder.binding.relativHome.setOnClickListener(v -> {
             Intent intent = new Intent(context, MusicActivity.class);
 
             // list.get() 을 받아오려면 DTO에 Serializable 처리해주기
             intent.putExtra("dto",list.get(position));
             context.startActivity(intent);
         });
+
     }
 
     @Override

@@ -11,7 +11,7 @@ import com.example.cloneyoutubemusic.databinding.ActivityMusicBinding;
 
 public class MusicActivity extends AppCompatActivity {
     ActivityMusicBinding binding;
-    HomeDTO dto;
+    HomeDTO dto, dto1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +21,12 @@ public class MusicActivity extends AppCompatActivity {
         dto = (HomeDTO) getIntent().getSerializableExtra("dto");
 
         binding.imgvTitle.setImageResource(dto.getMusic());
+        binding.tvTitle.setText(dto.getTitle());
+        binding.tvSinger.setText(dto.getSinger());
+
+
+
+
 
 
     }
