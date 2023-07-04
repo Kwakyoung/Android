@@ -2,11 +2,11 @@ package com.example.cloneyoutubemusic.Home.DTO;
 
 import java.io.Serializable;
 
-public class HomeDTO implements Serializable {
+public class HomeDTO1 implements Serializable {
     private int music;
     private String title, singer;
 
-    public HomeDTO(int music, String title, String singer) {
+    public HomeDTO1(int music, String title, String singer) {
         this.music = music;
         this.title = title;
         this.singer = singer;
