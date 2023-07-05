@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         RetrofitClient rc = new RetrofitClient();
-        RtrofitInterface api = rc.getRetrofit().create(RtrofitInterface.class);
+        RetrofitInterface api = rc.getRetrofit().create(RetrofitInterface.class);
         // 여기까진 초기화식.
 
 //        api.getCulist().enqueue(new Callback<String>() {

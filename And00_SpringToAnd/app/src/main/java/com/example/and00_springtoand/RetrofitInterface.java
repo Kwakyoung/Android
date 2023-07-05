@@ -10,7 +10,7 @@ package com.example.and00_springtoand;
 import retrofit2.Call;
 import retrofit2.http.GET;
 
-public interface RtrofitInterface {
+public interface RetrofitInterface {
     // Retrofit으로 return받는 모든 것들은 Call<클래스타입> 형태를 띄고있다. ( 규칙 )
 
     @GET("list.cu")
