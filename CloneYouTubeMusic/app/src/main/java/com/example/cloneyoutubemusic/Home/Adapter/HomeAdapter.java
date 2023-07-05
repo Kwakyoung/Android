@@ -9,11 +9,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cloneyoutubemusic.Home.DTO.HomeDTO;
-import com.example.cloneyoutubemusic.Home.DTO.HomeDTO1;
 import com.example.cloneyoutubemusic.Home.MusicActivity;
 import com.example.cloneyoutubemusic.databinding.ItemHomeBinding;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 
@@ -21,12 +19,11 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder > {
 
     ItemHomeBinding binding;
     ArrayList<HomeDTO> list;
-    ArrayList<HomeDTO1> list1;
+
     Context context;
 
-    public HomeAdapter(ArrayList<HomeDTO> list, ArrayList<HomeDTO1> list1, Context context) {
+    public HomeAdapter(ArrayList<HomeDTO> list, Context context) {
         this.list = list;
-        this.list1 = list1;
         this.context = context;
     }
 
@@ -50,11 +47,6 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder > {
             context.startActivity(intent);
         });
 
-        holder.binding.relativ2.setOnClickListener(v -> {
-            Intent intent = new Intent(context, MusicActivity.class);
-            intent.putExtra("dto1",list1.get(position));
-            context.startActivity(intent);
-        });
 
     }
 

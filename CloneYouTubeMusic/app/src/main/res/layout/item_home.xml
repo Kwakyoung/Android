@@ -40,7 +40,7 @@
         android:layout_below="@id/music_card"
         android:text="찬란한 하루"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"/>
+        android:layout_height="50dp"/>
         <TextView
             android:id="@+id/home_singer"
             android:text="가수"
@@ -50,7 +50,6 @@
 
     <RelativeLayout
         android:id="@+id/relativ_2"
-        android:layout_marginTop="30dp"
         android:layout_below="@id/relativ_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
