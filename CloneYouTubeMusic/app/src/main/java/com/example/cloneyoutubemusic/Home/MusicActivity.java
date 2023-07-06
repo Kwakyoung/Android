@@ -17,6 +17,7 @@ public class MusicActivity extends AppCompatActivity {
         binding = ActivityMusicBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        String a = "dto";
         dto = (HomeDTO) getIntent().getSerializableExtra("dto");
 
 
