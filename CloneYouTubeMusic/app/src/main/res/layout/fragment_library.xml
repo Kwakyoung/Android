@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Library.LibraryFragment"
+    android:orientation="vertical"
+    android:background="@color/black">
+
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/imgv_logo"
+            android:layout_centerVertical="true"
+
+            android:src="@drawable/img_logo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+        <TextView
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:layout_toRightOf="@id/imgv_logo"
+            android:textColor="#fff"
+            android:text="Music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/search"
+            android:layout_marginHorizontal="20dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/profile_card"
+            android:src="@drawable/baseline_search_24"
+            android:layout_width="20dp"
+            android:layout_height="20dp"/>
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/search"
+            android:src="@drawable/baseline_cast_24"
+            android:layout_width="20dp"
+            android:layout_height="20dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/profile_card"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="50dp"
+            android:layout_marginRight="10dp">
+
+
+            <ImageView
+                android:id="@+id/profile"
+                android:src="@drawable/profile"
+                android:layout_width="30dp"
+                android:layout_height="30dp"/>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:layout_weight="1"
+            android:text="최근 활동"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_gravity="center"
+            android:src="@drawable/arrow_forward_24"
+            android:layout_width="20dp"
+            android:layout_height="20dp"/>
+    </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recv_library"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_marginTop="50dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_marginVertical="15dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/library_arraw"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+                <TextView
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:text="오프라인 저장 콘텐츠"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <ImageView
+                    android:layout_gravity="center"
+                    android:src="@drawable/arrow_forward_24"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginVertical="15dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/library_play"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+                <TextView
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:text="재생목록"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <ImageView
+                    android:layout_gravity="center"
+                    android:src="@drawable/arrow_forward_24"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginVertical="15dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/labrary_album"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+                <TextView
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:text="앨범"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <ImageView
+                    android:layout_gravity="center"
+                    android:src="@drawable/arrow_forward_24"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginVertical="15dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/note_24"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+                <TextView
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:text="노래"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <ImageView
+                    android:layout_gravity="center"
+                    android:src="@drawable/arrow_forward_24"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginVertical="15dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/library_person"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+                <TextView
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:text="아티스트"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <ImageView
+                    android:layout_gravity="center"
+                    android:src="@drawable/arrow_forward_24"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginVertical="15dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/library_subscriptions_24"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+                <TextView
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:text="구독"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <ImageView
+                    android:layout_gravity="center"
+                    android:src="@drawable/arrow_forward_24"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>

@@ -42,10 +42,10 @@ public class HomeFragment extends Fragment {
 
     public ArrayList<HomeDTO> getlist(){
         ArrayList<HomeDTO> list = new ArrayList<>();
-        list.add(new HomeDTO(R.drawable.melomance, "찬란한 하루 ", "멜로망스"));
-        list.add(new HomeDTO(R.drawable.lucy, "히어로 ", "루시"));
-        list.add(new HomeDTO(R.drawable.quick_stray, "특 S-Class ", "Stray Kids"));
-        list.add(new HomeDTO(R.drawable.quick_paulkim, "우린 제법 잘어울려요 ", "폴킴"));
+        list.add(new HomeDTO(R.drawable.melomance, R.drawable.art,"찬란한 하루 ", "예술이야","멜로망스", "싸이"));
+        list.add(new HomeDTO(R.drawable.lucy, R.drawable.pray,"히어로 ", "기도","루시","비투비"));
+        list.add(new HomeDTO(R.drawable.quick_stray,R.drawable.chamgo, "특 S-Class ", "참고사항","Stray Kids","이무진"));
+        list.add(new HomeDTO(R.drawable.quick_paulkim, R.drawable.made_sound, "우린 제법 잘어울려요 ", "미친소리","폴킴","이예준"));
 
         return list;
     }

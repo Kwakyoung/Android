@@ -17,22 +17,18 @@ public class MusicActivity extends AppCompatActivity {
         binding = ActivityMusicBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        String a = "dto";
         dto = (HomeDTO) getIntent().getSerializableExtra("dto");
 
-
-        binding.imgvTitle.setImageResource(dto.getMusic());
-        binding.tvTitle.setText(dto.getTitle());
-        binding.tvSinger.setText(dto.getSinger());
-
-//        binding.imgvTitle.setImageResource(dto1.getMusic());
-//        binding.tvTitle.setText(dto1.getTitle());
-//        binding.tvSinger.setText(dto1.getSinger());
-
-
-
-
-
+        if ( dto == (HomeDTO) getIntent().getSerializableExtra("dto") ) {
+            binding.imgvTitle.setImageResource(dto.getMusic1());
+            binding.tvTitle.setText(dto.getTitle1());
+            binding.tvSinger.setText(dto.getSinger1());
+        }
+//        } else if (dto == (HomeDTO) getIntent().getSerializableExtra("dto1")) {
+//            binding.imgvTitle.setImageResource(dto.getMusic2());
+//            binding.tvTitle.setText(dto.getTitle2());
+//            binding.tvSinger.setText(dto.getSinger2());
+//        }
 
 
     }

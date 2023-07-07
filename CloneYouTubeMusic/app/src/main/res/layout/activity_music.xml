@@ -59,13 +59,13 @@
             android:id="@+id/imgv_title"
             android:layout_centerHorizontal="true"
             android:src="@drawable/lucy"
-            android:layout_width="300dp"
-            android:layout_height="300dp"/>
+            android:layout_width="330dp"
+            android:layout_height="330dp"/>
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_marginHorizontal="30dp"
-        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_width="330dp"
         android:layout_height="wrap_content">
 
         <ImageView
@@ -75,19 +75,14 @@
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:textSize="25dp"
             android:id="@+id/tv_title"
-            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
             android:text="히어로"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/tv_title"
-            android:id="@+id/tv_singer"
-            android:text="루시"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:textSize="25dp" />
+
 
         <ImageView
             android:layout_centerVertical="true"
@@ -96,6 +91,73 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </RelativeLayout>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"
+        android:id="@+id/tv_singer"
+        android:text="루시"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <SeekBar
+        android:thumb="@drawable/seekbar_thumb"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:max="100"
+        android:progress="0"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/shuffle"
+            android:layout_width="35dp"
+            android:layout_height="35dp"/>
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/skip_previous_24"
+            android:layout_width="35dp"
+            android:layout_height="35dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#123"
+            android:alpha="0.6"
+            app:cardCornerRadius="50dp"
+            >
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/baseline_play_arrow_24"
+                android:layout_width="35dp"
+                android:layout_height="35dp"/>
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/skip_next_24"
+            android:layout_width="35dp"
+            android:layout_height="35dp"/>
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/repeat_24"
+            android:layout_width="35dp"
+            android:layout_height="35dp"/>
+
+    </LinearLayout>
 
 
 </LinearLayout>

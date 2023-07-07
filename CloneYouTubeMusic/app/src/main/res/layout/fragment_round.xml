@@ -14,7 +14,6 @@
         android:orientation="vertical">
 
     <RelativeLayout
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
@@ -110,7 +109,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:src="@drawable/chart_24"
+                android:src="@drawable/chart_up_24"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <TextView
@@ -201,7 +200,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -237,7 +236,7 @@
     </LinearLayout>
 
     <LinearLayout
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="50dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

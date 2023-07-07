@@ -38,15 +38,24 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder > {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.binding.itemMusic.setImageResource(list.get(position).getMusic());
-        holder.binding.itemTitle.setText(list.get(position).getTitle());
-        holder.binding.homeSinger.setText(list.get(position).getSinger());
+
+        holder.binding.itemMusic.setImageResource(list.get(position).getMusic1());
+        holder.binding.itemTitle.setText(list.get(position).getTitle1());
+        holder.binding.homeSinger.setText(list.get(position).getSinger1());
         holder.binding.relativ1.setOnClickListener(v -> {
             Intent intent = new Intent(context, MusicActivity.class);
             intent.putExtra("dto",list.get(position));
             context.startActivity(intent);
         });
 
+        holder.binding.itemMusic1.setImageResource(list.get(position).getMusic2());
+        holder.binding.itemTitle1.setText(list.get(position).getTitle2());
+        holder.binding.homeSinger1.setText(list.get(position).getSinger2());
+        holder.binding.relativ2.setOnClickListener(v -> {
+            Intent intent = new Intent(context, MusicActivity.class);
+            intent.putExtra("dto1",list.get(position));
+            context.startActivity(intent);
+        });
 
     }
 

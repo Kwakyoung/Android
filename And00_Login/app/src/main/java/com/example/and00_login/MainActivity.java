@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
             }); // onExcute 메소드가 실행되면 일단 Spring으로 전송처리는 정상적으로 작동한다. ( 결과를 가져오려면 어떻게 해야할까? )
 
         });
+
     }
 
 
