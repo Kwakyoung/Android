@@ -15,7 +15,7 @@ public class CommonConn {
     // 재사용이 가능한 구조를 하나 만들고 재사용하면 편함.
     private final String TAG = "CommonConn";
 
-    private HashMap<String , Object> paramMap; // 파라메터 전송용
+    private HashMap<String , Object> paramMap; // 파라메터 전송용 ID, PW 에 값 받아오기위한 ??
     private Context context;  // 화면위에 토스트, ProgressDialog를 보여주기 위한 용도
     private String mapping ;  // list.cu , login , member 등의 맵핑을 받아오기 위한 것.
     private ProgressDialog dialog; // 모양이 다양하게 커스텀이 가능하니 나중에 바꾸면 된다.
@@ -26,6 +26,7 @@ public class CommonConn {
         this.context = context;
         this.mapping = mapping;
         this.paramMap = new HashMap<>();   // hashmap은 초기화만  new로 이전 파라메터를 비워주는
+        Log.d("콜백", "onCreate: " );
     }
 
     public void addParamMap(String key, Object value) {
@@ -57,6 +58,7 @@ public class CommonConn {
         public void onExcute(KygCallBack callBack){ // < 옵저버 3번
             this.callBack=callBack;
             onPreExcute();
+            Log.d(TAG, "onExcute: "+ this.callBack);
             RetrofitInterface api = new RetrofitClient().getRetrofit().create(RetrofitInterface.class);
             // GET방식인지 POST방식인지를 받아와서 처리도 가능하다.    (현재는 어려우니까 POST로 고정시켜놓기)
             api.PostMethod(mapping , paramMap).enqueue(new Callback<String>() {
