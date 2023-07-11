@@ -25,6 +25,7 @@
         app:startIconContentDescription="아이디"
         app:boxStrokeColor="#222"
         android:layout_marginBottom="20dp"
+        app:boxBackgroundColor="@color/white"
         >
 
 
@@ -45,8 +46,9 @@
         android:layout_height="wrap_content"
         app:startIconDrawable="@drawable/baseline_password_24"
         android:layout_marginHorizontal="10dp"
-        app:startIconContentDescription="아이디"
+        app:startIconContentDescription="비밀번호"
         app:boxStrokeColor="#222"
+        app:boxBackgroundColor="@color/white"
         app:passwordToggleEnabled="true"
         >
         <!-- passwordToggleEnabled <= 비밀번호를 ***표시해주는 눈-->

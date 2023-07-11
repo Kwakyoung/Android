@@ -62,7 +62,7 @@
             app:cardCornerRadius="10dp">
             <ImageView
                 android:id="@+id/item_music1"
-                android:src="@drawable/melomance"
+                android:src="@drawable/made_sound"
                 android:layout_width="100dp"
                 android:layout_height="100dp"/>
 
@@ -80,7 +80,7 @@
         <TextView
             android:id="@+id/item_title1"
             android:layout_below="@id/music_card1"
-            android:text="찬란한 하루"
+            android:text="미친 소리"
             android:layout_width="100dp"
             android:layout_height="wrap_content"/>
         <TextView

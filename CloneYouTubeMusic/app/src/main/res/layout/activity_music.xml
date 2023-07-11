@@ -137,6 +137,7 @@
             app:cardCornerRadius="50dp"
             >
             <ImageView
+                android:id="@+id/btn_play"
                 android:layout_gravity="center"
                 android:src="@drawable/baseline_play_arrow_24"
                 android:layout_width="35dp"

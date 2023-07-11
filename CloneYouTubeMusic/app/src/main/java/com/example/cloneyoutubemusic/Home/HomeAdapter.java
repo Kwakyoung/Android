@@ -1,4 +1,4 @@
-package com.example.cloneyoutubemusic.Home.Adapter;
+package com.example.cloneyoutubemusic.Home;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cloneyoutubemusic.Home.DTO.HomeDTO;
-import com.example.cloneyoutubemusic.Home.MusicActivity;
 import com.example.cloneyoutubemusic.databinding.ItemHomeBinding;
 
 import java.util.ArrayList;
@@ -53,7 +52,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder > {
         holder.binding.homeSinger1.setText(list.get(position).getSinger2());
         holder.binding.relativ2.setOnClickListener(v -> {
             Intent intent = new Intent(context, MusicActivity.class);
-            intent.putExtra("dto1",list.get(position));
+            intent.putExtra("dto",list.get(position));
             context.startActivity(intent);
         });
 

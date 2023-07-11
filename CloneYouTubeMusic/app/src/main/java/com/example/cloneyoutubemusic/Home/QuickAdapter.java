@@ -1,4 +1,4 @@
-package com.example.cloneyoutubemusic.Home.Adapter;
+package com.example.cloneyoutubemusic.Home;
 
 import android.content.Context;
 import android.view.LayoutInflater;

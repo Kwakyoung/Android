@@ -9,9 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.cloneyoutubemusic.Home.Adapter.HomeAdapter;
-import com.example.cloneyoutubemusic.Home.Adapter.MixAdapter;
-import com.example.cloneyoutubemusic.Home.Adapter.QuickAdapter;
 import com.example.cloneyoutubemusic.Home.DTO.HomeDTO;
 import com.example.cloneyoutubemusic.Home.DTO.MixDTO;
 import com.example.cloneyoutubemusic.Home.DTO.QuickDTO;
