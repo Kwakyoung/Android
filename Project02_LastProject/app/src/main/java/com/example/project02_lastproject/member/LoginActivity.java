@@ -2,11 +2,14 @@ package com.example.project02_lastproject.member;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.project02_lastproject.MainActivity;
 import com.example.project02_lastproject.R;
 import com.example.project02_lastproject.common.CommonConn;
+import com.example.project02_lastproject.common.CommonVar;
 import com.example.project02_lastproject.databinding.ActivityLoginBinding;
 import com.google.gson.Gson;
 
@@ -31,11 +34,13 @@ public class LoginActivity extends AppCompatActivity {
             conn.addParamMap("password",binding.edtPw.getText().toString());
             conn.onExcute(((isResult, data) -> {
                 if(isResult){
-                    MemberVO vo = new Gson().fromJson(data , MemberVO.class);
-                    if(vo==null){
+                    CommonVar.loginInfo = new Gson().fromJson(data , MemberVO.class);    // CommonVar.loginInfo <=  MemberVO vo 를 CommonVar 에서 스태틱으로 담아둠 그래서 이렇게 사용.
+                    if(CommonVar.loginInfo==null){                                       // CommonVar.loginInfo = vo;
                         Toast.makeText(this, "아이디 또는 비밀번호를 확인", Toast.LENGTH_SHORT).show();
                     }else{
-                        Toast.makeText(this, "로그인 성공!", Toast.LENGTH_SHORT).show();
+                        // CommonVar.loginInfo = vo;
+                        Intent intent = new Intent(LoginActivity.this , MainActivity.class);
+                        startActivity(intent);
                     }
                 }
             }));
