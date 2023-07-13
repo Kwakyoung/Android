@@ -40,10 +40,6 @@ public class CustomerFragment extends Fragment {
 
 
 
-
-
-
-
         return binding.getRoot();
     }
 

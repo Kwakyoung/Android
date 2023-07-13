@@ -9,6 +9,7 @@ import android.util.Log;
 import com.example.project02_lastproject.common.CommonConn;
 import com.example.project02_lastproject.customer.CustomerFragment;
 import com.example.project02_lastproject.databinding.ActivityMainBinding;
+import com.example.project02_lastproject.hr.HrFragment;
 
 import java.util.HashMap;
 
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 if(i==0){
                     getSupportFragmentManager().beginTransaction().replace(R.id.container , new CustomerFragment()).commit();
                 } else if (i==1) {
-
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container , new HrFragment()).commit();
                 } else if (i==2) {
 
                 } else if (i==3) {
