@@ -80,25 +80,19 @@
         style="@style/Widget.MaterialComponents.Button.TextButton"
         />
 
-    <Button
-        android:layout_marginTop="20dp"
+    <ImageView
+        android:src="@drawable/kakao_login"
         android:layout_gravity="center"
-        android:id="@+id/btn_kakao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="카카오 로그인"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:id="@+id/imgv_kakaologin"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         />
 
-    <Button
-        android:layout_marginTop="20dp"
+    <com.navercorp.nid.oauth.view.NidOAuthLoginButton
+        android:id="@+id/buttonOAuthLoginImg"
         android:layout_gravity="center"
-        android:id="@+id/btn_naver"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="네이버 로그인"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        />
+        android:layout_width="200dp"
+        android:layout_height="50dp" />
 
 
     <LinearLayout
