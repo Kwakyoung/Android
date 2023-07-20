@@ -1,4 +1,4 @@
-package com.example.cloneyoutubemusic.Home;
+package com.example.cloneyoutubemusic;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,6 +21,8 @@ public class MusicActivity extends AppCompatActivity {
 
     private SeekBar seekBar;
     private boolean isPlaying = false;
+
+    private boolean like = false;
     private Handler handler;
     private Runnable runnable;
     private int progress = 0 ; // 시크바의 진행 위치 저장
@@ -48,7 +50,19 @@ public class MusicActivity extends AppCompatActivity {
             finish();
         });
 
-
+        binding.imgvLike.setOnClickListener(v -> {
+            if(like){
+                dto.setLike(R.drawable.thumb_up_24);
+                binding.imgvLike.setImageResource(dto.getLike());
+                Toast.makeText(this, "좋아요 표시한 컨텐츠에서 삭제되었습니다.", Toast.LENGTH_SHORT).show();
+                like = false;
+            }else {
+                dto.setLike(R.drawable.thumb_up_alt_24);
+                binding.imgvLike.setImageResource(dto.getLike());
+                Toast.makeText(this, "좋아요 표시한 노래에 추가되었습니다.", Toast.LENGTH_SHORT).show();
+                like = true;
+            }
+        });
 
 
         binding.btnPlay.setOnClickListener(v -> {

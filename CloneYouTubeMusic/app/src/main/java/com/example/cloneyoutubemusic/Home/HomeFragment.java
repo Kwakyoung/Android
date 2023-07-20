@@ -1,5 +1,6 @@
 package com.example.cloneyoutubemusic.Home;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -14,6 +15,7 @@ import com.example.cloneyoutubemusic.Home.DTO.MixDTO;
 import com.example.cloneyoutubemusic.Home.DTO.QuickDTO;
 import com.example.cloneyoutubemusic.R;
 import com.example.cloneyoutubemusic.databinding.FragmentHomeBinding;
+import com.example.cloneyoutubemusic.search.SearchActivity;
 
 import java.util.ArrayList;
 
@@ -25,6 +27,11 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater,container,false);
+
+        binding.search.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), SearchActivity.class);
+            startActivity(intent);
+        });
 
         binding.recvReplay.setAdapter(new HomeAdapter(getlist(),getContext()));
         binding.recvReplay.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
@@ -39,7 +46,7 @@ public class HomeFragment extends Fragment {
 
     public ArrayList<HomeDTO> getlist(){
         ArrayList<HomeDTO> list = new ArrayList<>();
-        list.add(new HomeDTO(R.drawable.melomance, R.drawable.art,"찬란한 하루 ", "예술이야","멜로망스", "싸이"));
+        list.add(new HomeDTO(R.drawable.melomance, R.drawable.art,"이름긴거 테스트 아아아아아아아아아아아암ㅁㅁㅁㅁㅁㅁㅁ ", "예술이야","멜로망스", "싸이"));
         list.add(new HomeDTO(R.drawable.lucy, R.drawable.pray,"히어로 ", "기도","루시","비투비"));
         list.add(new HomeDTO(R.drawable.quick_stray,R.drawable.chamgo, "특 S-Class ", "참고사항","Stray Kids","이무진"));
         list.add(new HomeDTO(R.drawable.quick_paulkim, R.drawable.made_sound, "우린 제법 잘어울려요 ", "미친소리","폴킴","이예준"));

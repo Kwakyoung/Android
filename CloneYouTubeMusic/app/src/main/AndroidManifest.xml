@@ -13,7 +13,10 @@
         android:theme="@style/Theme.CloneYouTubeMusic"
         tools:targetApi="31">
         <activity
-            android:name=".Home.MusicActivity"
+            android:name=".search.SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MusicActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

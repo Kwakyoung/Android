@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home.MusicActivity"
+    tools:context=".MusicActivity"
     android:orientation="vertical"
     android:background="#000">
 
@@ -76,15 +76,19 @@
 
         <TextView
             android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
+            android:layout_width="230dp"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
             android:text="히어로"
+            android:textColor="@color/white"
             android:textSize="25dp" />
 
 
         <ImageView
+            android:id="@+id/imgv_like"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:src="@drawable/thumb_up_24"
@@ -120,8 +124,8 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:src="@drawable/shuffle"
-            android:layout_width="35dp"
-            android:layout_height="35dp"/>
+            android:layout_width="25dp"
+            android:layout_height="25dp"/>
 
         <ImageView
             android:layout_gravity="center"
@@ -131,18 +135,17 @@
             android:layout_height="35dp"/>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:background="#123"
-            android:alpha="0.6"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:backgroundTint="#59F3F1F1"
             app:cardCornerRadius="50dp"
             >
             <ImageView
                 android:id="@+id/btn_play"
                 android:layout_gravity="center"
                 android:src="@drawable/baseline_play_arrow_24"
-                android:layout_width="35dp"
-                android:layout_height="35dp"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
         </androidx.cardview.widget.CardView>
 
         <ImageView
@@ -156,8 +159,8 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:src="@drawable/repeat_24"
-            android:layout_width="35dp"
-            android:layout_height="35dp"/>
+            android:layout_width="25dp"
+            android:layout_height="25dp"/>
 
     </LinearLayout>
 

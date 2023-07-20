@@ -3,8 +3,20 @@ package com.example.cloneyoutubemusic.Home.DTO;
 import java.io.Serializable;
 
 public class HomeDTO implements Serializable {
-    private int music1, music2;
+    private int music1, music2, like;
     private String title1, title2, singer1, singer2;
+
+    public HomeDTO(int like) {
+        this.like = like;
+    }
+
+    public int getLike() {
+        return like;
+    }
+
+    public void setLike(int like) {
+        this.like = like;
+    }
 
     public HomeDTO(int music1, int music2, String title1, String title2, String singer1, String singer2) {
         this.music1 = music1;
