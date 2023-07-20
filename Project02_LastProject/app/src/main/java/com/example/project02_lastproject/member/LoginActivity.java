@@ -1,6 +1,7 @@
 package com.example.project02_lastproject.member;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -8,10 +9,13 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Base64;
 import android.util.Log;
 import android.widget.Toast;
@@ -44,6 +48,8 @@ public class LoginActivity extends AppCompatActivity {
     // 구글 로그인은 혼자해보기. ( 구글 개발자 콘솔 등록되어야 함. )
 
     ActivityLoginBinding binding;
+    SharedPreferences pref; // 자바 변수나 static등의 멤버로 데이터를 저장하면 앱을 다시 실행시 처음부터 불러옴. (DB)
+    SharedPreferences.Editor editor ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
         KakaoSdk.init(this, "1986060e76a6d35eba083bc7720aad9d");
         NaverIdLoginSDK.INSTANCE.initialize(this, "n8t4t5Or4PjfmE_GL5Mu", "IxoQWKnmsO", getString(R.string.app_name));
         naverLogin();
-        checkPermission();
+
 
 
 
@@ -91,6 +97,29 @@ public class LoginActivity extends AppCompatActivity {
             binding.imgvKakaologin.setOnClickListener(v -> {
                 kakaoLogin(this);
             });
+
+
+        // 권한
+        pref = getPreferences(MODE_PRIVATE);  // 앱 실행 초기화..?
+        editor = pref.edit(); // 데이터를 넣거나 수정하기 위한 객체
+//        editor.putInt("permission",0); // 데이터 0이 들어감
+//        editor.apply(); // 데이터를 확실히 넣음.
+
+
+        pref.getInt("permission" , -1 );
+        // 최초 실행시에 확인용 default 값
+
+        // 최초 실행 시 숫자, -1
+        // 한번 실행 후 -> ?
+        // 두번 실행 후 -> ?
+        // 거절 ->
+        // 승인 ->
+
+        if(pref.getInt("permission", -1) == -1 ){
+            checkPermission(); // <- 권한 창
+        }
+
+
     }
 
     public void naverLogin(){
@@ -214,13 +243,39 @@ public class LoginActivity extends AppCompatActivity {
 
     // 나중에 재사용이 가능하게 commonMethod등의 클래스 내부에 넣어두면 좋음!
     private final int REQ_PERMISSION = 1000;
+    private final int REQ_PERMISSION_DENY = 1001; // 권한 사용 후에 왔다면
     private void checkPermission(){
-        String[] permessions = {Manifest.permission.CAMERA , Manifest.permission.ACCESS_MEDIA_LOCATION};  // 카메라 권한을 String으로 가져옴. + 갤러리
+        //        editor.putInt("permission",0); // 데이터 0이 들어감
+        //        editor.apply(); // 데이터를 확실히 넣음.
+        int permission = pref.getInt("permission" , -1);
+        permission++;
+        editor.putInt("permission" , permission);
+
+
+        String[] permessions = {Manifest.permission.CAMERA ,
+                                Manifest.permission.ACCESS_MEDIA_LOCATION,
+                                Manifest.permission.READ_EXTERNAL_STORAGE,
+                                Manifest.permission.WRITE_EXTERNAL_STORAGE};  // 카메라 권한을 String으로 가져옴. + 갤러리
 
         for(int i = 0; i<permessions.length; i++) {
             // 내가 모든 권한이 필요하다면 전체 권한을 하나씩 체크해서 허용 안됨이 있는경우 다시 요청을 되게 만든다.
             if (ActivityCompat.checkSelfPermission(this, permessions[i]) == PackageManager.PERMISSION_DENIED){
-                ActivityCompat.requestPermissions(this, permessions, REQ_PERMISSION); // 1000 을 int로 선언해줌
+                if(ActivityCompat.shouldShowRequestPermissionRationale(this, permessions[i])){
+                    // 최초 앱이 설치되고 실행시 false가 나옴. => 사용자가 거부 후 true 재거부 => false
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                    builder.setTitle("권한 요청").setMessage("권한이 반드시 필요합니다.! 미허용시 앱 사용 불가!");
+                    builder.setPositiveButton("확인(권한허용)" , (dialog, which) -> {
+                        // 2. 권한 설명 후 다시 보여줌.
+                        ActivityCompat.requestPermissions(this, permessions, REQ_PERMISSION);
+                    });
+                    builder.setNegativeButton("종료(권한허용불가)" , (dialog, which) -> {
+                       finish();
+                    });
+                    builder.create().show(); // <= 넣어줘야함.
+                }else {
+                     // 1. 처음에 보여줌
+                    ActivityCompat.requestPermissions(this, permessions, REQ_PERMISSION); // 1000 을 int로 선언해줌
+                }
                 break;
             }
         }
@@ -244,7 +299,35 @@ public class LoginActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if(REQ_PERMISSION == requestCode){
+            for (int i = 0; i < grantResults.length; i++) {
+                if(grantResults[i] == PackageManager.PERMISSION_DENIED){
+                    //거절된권한이있음.
+                    checkPermission();
+                    break;
+                }
+            }
+
+
             Log.d("권한", "onRequestPermissionsResult: 권한 요청 완료");
+        } else if (REQ_PERMISSION_DENY == requestCode) {
+            for (int i = 0; i < grantResults.length; i++) {
+                if(grantResults[i] == PackageManager.PERMISSION_DENIED){
+                    Log.d("권한", "onRequestPermissionsResult: 다시 권한 요청화면을 띄울수가 없음. 2회거절당함.");
+                    editor.putInt("permission", -2);
+                    //거절된권한이있음.
+//                    checkPermission();
+                    viewSettiong();
+                }
+            }
+
         }
     }
+
+    public void viewSettiong(){ // 사용자가 직접 세팅파일이 열수있게
+        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+        intent.setData(Uri.parse("package:" + getApplicationContext().getPackageName()));
+        startActivity(intent);
+    }
+
+
 }
