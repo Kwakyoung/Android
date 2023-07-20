@@ -1,6 +1,9 @@
 package com.example.cloneyoutubemusic.search;
 
 import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.inputmethod.EditorInfo;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -27,6 +30,18 @@ public class SearchActivity extends AppCompatActivity {
         binding.recvHistory.setLayoutManager(new LinearLayoutManager(getBaseContext(),LinearLayoutManager.HORIZONTAL,false));
         binding.recvHistory.setAdapter(new SearchAdapter(getBaseContext(),getlist()));
 
+        binding.edt.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_UP) {
+                    // 엔터 키가 눌렸을 때 클릭 이벤트를 처리
+                    v.performClick();
+                    binding.tvTest.setText(binding.edt.getText().toString());
+                    return true;
+                }
+                return false;
+            }
+        });
 
     }
 
