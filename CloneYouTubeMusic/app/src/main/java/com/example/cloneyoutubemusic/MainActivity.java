@@ -15,6 +15,11 @@ import com.example.cloneyoutubemusic.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
+    HomeFragment homeFragment =          new HomeFragment() ;
+    RoundFragment roundFragment =          new RoundFragment() ;
+    LibraryFragment libraryFragment =          new LibraryFragment() ;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +34,13 @@ public class MainActivity extends AppCompatActivity {
         binding.bottomNavigation.setOnItemSelectedListener(item -> {
             Fragment fragment = null;
             if (item.getItemId()==R.id.tab1){
-                fragment = new HomeFragment();
+                fragment = homeFragment;
 
             } else if (item.getItemId()==R.id.tab2) {
-                fragment = new RoundFragment();
+                fragment = roundFragment;
 
             } else if (item.getItemId()==R.id.tab3) {
-                fragment = new LibraryFragment();
+                fragment = libraryFragment;
             }else{
                 return false;
             }
